@@ -7,7 +7,6 @@ const GlobalStyles = createGlobalStyle`
     @font-face {
         font-family: 'radnika_next';
         src: url('static/radnikanext-medium-webfont.woff2');
-        format('woff2');
         font-weight: normal;
         font-style: normal;
     }
@@ -21,6 +20,7 @@ const GlobalStyles = createGlobalStyle`
         --maxWidth: 1000px;
         --bs: "0 12px 24px 0rgba(0, 0, 0, 0.09)";
         box-sizing: border-box;
+        font-size: 62.5%;
     }
 
     *, *:after, *:before {
@@ -52,22 +52,22 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 const InnerStyles = styled.div`
-    max-width: var(--maxWidth);
-    margin: 0 auto;
-    padding: 2rem;
+  max-width: var(--maxWidth);
+  margin: 0 auto;
+  padding: 2rem;
 `;
 
 export default function Page({ children, cool }) {
-    return (
-      <div>
-        <GlobalStyles />
-        <Header />
-        <InnerStyles>{children}</InnerStyles>
-      </div>
-    );
+  return (
+    <div>
+      <GlobalStyles />
+      <Header />
+      <InnerStyles>{children}</InnerStyles>
+    </div>
+  );
 }
 
 Page.propTypes = {
-    cool: PropTypes.string,
-    children: PropTypes.any
+  cool: PropTypes.string,
+  children: PropTypes.any,
 };
